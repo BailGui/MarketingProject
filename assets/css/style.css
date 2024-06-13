@@ -11,7 +11,7 @@
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
-  color: #444444;
+  color: rgb(32, 69, 100);
 }
 
 .navbar li{
@@ -91,7 +91,7 @@ h6 {
   z-index: 997;
   transition: all 0.5s;
   padding: 16px 0;
-  background: #213b52;
+  background: rgb(32, 69, 100);
 }
 
 #header .logo h1 {
@@ -952,6 +952,7 @@ section {
 
 .team .member .pic img {
   max-width: 100%;
+  max-height: 400px;
 }
 
 .team .member h4 {
