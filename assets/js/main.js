@@ -147,16 +147,16 @@
         itemSelector: '.portfolio-item',
         layoutMode: 'fitRows'
       });
-
+  
       let portfolioFilters = select('#portfolio-flters li', true);
-
+  
       on('click', '#portfolio-flters li', function(e) {
         e.preventDefault();
         portfolioFilters.forEach(function(el) {
           el.classList.remove('filter-active');
         });
         this.classList.add('filter-active');
-
+  
         portfolioIsotope.arrange({
           filter: this.getAttribute('data-filter')
         });
@@ -165,36 +165,45 @@
         });
       }, true);
     }
+  
+    /**
+     * Initiate portfolio lightbox 
+     */
+    const portfolioLightbox = GLightbox({
+      selector: '.portfolio-lightbox'
+    });
+  
+    /**
+     * Portfolio details slider
+     */
+    const swiper = new Swiper('.portfolio-details-slider', {
+      speed: 2000,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: true
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      },
+      on: {
+        slideChangeTransitionStart: function() {
+          console.log('animation begun');
+          $("#sliderPage1").fadeOut(1000);
 
-  });
+        },
+        slideChangeTransitionEnd: function() {
+          console.log('animation complete');
+          $("#sliderPage2").fadeIn(1500);
 
-  /**
-   * Initiate portfolio lightbox 
-   */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
-
-  /**
-   * Portfolio details slider
-   */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
-
-  /**
-   * Animation on scroll
-   */
-  window.addEventListener('load', () => {
+        }
+      }
+    });
+  
+    /**
+     * Animation on scroll
+     */
     AOS.init({
       duration: 1000,
       easing: "ease-in-out",
@@ -202,5 +211,5 @@
       mirror: false
     });
   });
-
+  
 })()
