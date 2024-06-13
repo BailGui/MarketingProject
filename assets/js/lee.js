@@ -4,12 +4,12 @@ const inpName      = document.getElementById("inpName"),
       submitButton = document.getElementById("submitButton"),
       contactForm  = document.getElementById("contactForm");
 
-
+if (contactForm) {
 contactForm.addEventListener("submit", function(event) {
     event.preventDefault();
     confirmMessage();
 });
-
+}
 
 function confirmMessage() {
     let userName  = inpName.value,
