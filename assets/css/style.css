@@ -363,8 +363,8 @@ h6 {
 #hero {
   width: 100%;
   padding: 0 0 0 0;
-  background: #213b52;
-  background: linear-gradient(180deg, #213b52 0%, rgb(33, 60, 84) 35%, rgb(32, 69, 100) 100%);
+  background: #82B1FF;
+  background: linear-gradient(0deg, #82B1FF 0%, rgb(33, 60, 84) 35%, rgb(32, 69, 100) 100%);
 }
 
 #hero h1 {
