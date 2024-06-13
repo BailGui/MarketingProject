@@ -190,13 +190,19 @@
       on: {
         slideChangeTransitionStart: function() {
           console.log('animation begun');
-          $("#sliderPage1").fadeOut(1000);
-
+          if (swiper.activeIndex === 0) {
+            $("#sliderPage2").fadeOut(1500);
+          } else {
+            $("#sliderPage1").fadeOut(1500);
+          }
         },
         slideChangeTransitionEnd: function() {
           console.log('animation complete');
-          $("#sliderPage2").fadeIn(1500);
-
+          if (swiper.activeIndex === 0) {
+            $("#sliderPage1").fadeIn(1500);
+          } else {
+            $("#sliderPage2").fadeIn(1500);
+          }
         }
       }
     });
